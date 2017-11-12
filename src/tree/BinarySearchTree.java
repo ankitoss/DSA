@@ -86,4 +86,59 @@ public class BinarySearchTree {
 		traversePostOrder(node.getRight());
 		System.out.print(node.getValue() + " ");
 	}
+	
+	public BinaryTreeNode inOrderSuccessor(int data) {
+		BinaryTreeNode current = findNode(data);
+		if(current == null) {
+			return null;
+		}
+		
+		if(current.getRight() != null) {
+			BinaryTreeNode n = current.getRight();
+			while (n.getLeft() != null) {
+				n = n.getLeft();
+			}
+			return n;
+		}
+		
+		
+		BinaryTreeNode successor = root;
+		BinaryTreeNode ancestor = root;
+		while (ancestor != current) {
+			if(data < ancestor.getValue()) {
+				successor = ancestor;
+				ancestor = ancestor.getLeft();
+			} else {
+				ancestor = ancestor.getRight();
+			}
+		}
+		return successor;
+	}
+	
+	public BinaryTreeNode findNode(int data) {
+		BinaryTreeNode current = root;
+		while (current != null) {
+			if(current.getValue() == data) {
+				return current;
+			} else if (data < current.getValue()) {
+				current = current.getLeft();
+			} else {
+				current = current.getRight();
+			}
+		}
+		return null;
+	}
+	
+	public int getDepth() {
+		
+		return depth(root);
+	}
+	
+	private int depth(BinaryTreeNode node) {
+		if(node.getLeft() == null && node.getRight() == null) {
+			return 0;
+		}
+		
+		return 1 + Math.max(depth(node.getLeft()), depth(node.getRight()));
+	}
 }
