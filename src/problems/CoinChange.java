@@ -29,4 +29,15 @@ public class CoinChange {
 		}
 		return counter[total];
 	}
+	
+	public static int waysToMakeTotal(int[] denoms, int total) {
+		int[] counter = new int[total + 1];
+		counter[0] = 1;
+		for(int denom: denoms) {
+			for(int i = denom; i < counter.length; i++) {
+				counter[i] += counter[i - denom];
+			}
+		}
+		return counter[total];
+	}
 }
