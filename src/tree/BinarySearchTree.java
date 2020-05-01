@@ -1,5 +1,7 @@
 package tree;
 
+import pojo.BinaryTreeNode;
+
 public class BinarySearchTree {
 
 	private BinaryTreeNode root;
