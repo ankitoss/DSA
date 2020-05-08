@@ -82,13 +82,6 @@ public class MinDifferenceOf3Arrays {
                     k++;
                 }
             }
-            // } else if(b <= a && b <= c) {
-            //     j++;
-            //     j = Math.min(j, B.size()-1);
-            // } else if (c <= a && c <= b) {
-            //     k++;
-            //     k = Math.min(k, C.size()-1);
-            // }
         }
 
         return minDiff;
