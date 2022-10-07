@@ -5,26 +5,21 @@ import java.util.Set;
 
 public class Permutation {
 
-	private static Set<String> s = new HashSet<>();
-
 	public static void main(String[] args) {
-		permute("abcde");
-
-		System.out.println(s.size());
-		System.out.println(s);
+		permute("abc");
 	}
 
 	public static void permute(String str) {
-		permute(str, 0, 4);
+		permute(str, 0);
 	}
 
-	private static void permute(String str, int l, int r) {
-		if (l == r) {
-			s.add(str);
+	private static void permute(String str, int l) {
+		if (l == str.length() - 1) {
+			System.out.println(str);
 		} else {
-			for (int i = 0; i <= r; i++) {
+			for (int i = l; i < str.length(); i++) {
 				String str1 = swap(str, l, i);
-				permute(str1, l + 1, r);
+				permute(str1, l + 1);
 			}
 		}
 	}

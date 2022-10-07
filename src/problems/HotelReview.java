@@ -5,9 +5,9 @@ import pojo.Trie;
 import java.util.*;
 
 /**
-     Given a set of reviews provided by the customers for different hotels and a string containing “Good Words”, you need to sort the reviews in descending order according to their “Goodness Value” (Higher goodness value first). We define the “Goodness Value” of a string as the number of “Good Words” in that string.
+     Given a set of reviews provided by the customers for different hotels and a string containing "Good Words", you need to sort the reviews in descending order according to their "Goodness Value" (Higher goodness value first). We define the "Goodness Value" of a string as the number of "Good Words" in that string.
 
-     Note: Sorting should be stable. If review i and review j have the same “Goodness Value” then their original order would be preserved.
+     Note: Sorting should be stable. If review i and review j have the same "Goodness Value" then their original order would be preserved.
 
      You are expected to use Trie in an Interview for such problems
 
